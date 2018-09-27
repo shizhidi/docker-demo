@@ -2,7 +2,7 @@ FROM node:6.10.3-slim
 RUN apt-get update \    && apt-get install -y nginx
 WORKDIR /app
 COPY . /app/
-EXPOSE 80
+EXPOSE 8099
 RUN  yarn install \
     && yarn run build \
     && cp -r dist/* /var/www/html \
